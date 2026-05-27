@@ -1,0 +1,1 @@
+CREATE POLICY "Superadmins can update roles" ON public.user_roles FOR UPDATE USING (has_role(auth.uid(), 'superadmin'::app_role));
